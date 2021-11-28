@@ -11,7 +11,7 @@ describe('Test fahrenheit to celsius conversion', () => {
 
 
 describe('Test celsius to fahrenheit conversion', () => {
-    test('100 degrees celsius should be 0 degrees fahrenheit', () => {
+    test('100 degrees celsius should be 212 degrees fahrenheit', () => {
         expect(utils.celsiusToFahrenheit(100)).toBe(212);
     });
     test('0 degrees celsius should be 32 degrees fahrenheit', () => {
@@ -26,11 +26,17 @@ describe('Test getting the first string from an array', () => {
     });
     test('Returns null for an empty array', () => {
         // Write your test code here
+        const testList = []
+        expect(utils.getFirstStringFromArray(testList)).toBe(null)
     });
     test('Returns null if no strings are in the array', () => {
         // Write your test code here
+        const testList = [1, 2, 3, false, true, ]
+        expect(utils.getFirstStringFromArray(testList)).toBe(null)
     });
     test('Returns the second item if the first item is a number', () => {
         // Write your test code here
+        const testList = [1, 'hello']
+        expect(utils.getFirstStringFromArray(testList)).toBe('hello')
     });
 });
